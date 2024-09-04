@@ -82,9 +82,11 @@ function App() {
             />
           )}
         </button>
-        <p className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-[-2rem] text-white text-center select-none opacity-0 animate-[fadeIn_1s_ease-in_5s_forwards] group-hover:animate-none group-hover:opacity-0">
-          Click Eggtilda
-        </p>
+        {!isPlaying && (
+          <p className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-[-2rem] text-white text-center select-none opacity-0 animate-[fadeIn_1s_ease-in_5s_forwards] group-hover:animate-none group-hover:opacity-0">
+            Click Eggtilda
+          </p>
+        )}
       </div>
       {/* biome-ignore lint/a11y/useMediaCaption: There is none */}
       <audio loop ref={audioRef}>
