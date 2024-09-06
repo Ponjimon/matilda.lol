@@ -1,8 +1,7 @@
 import { createRootRoute } from '@tanstack/react-router'
 import { Link, Outlet, ScrollRestoration } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { Body, Head, Html, Meta, Scripts } from '@tanstack/start'
-import type { ReactNode } from 'react'
+import { lazy, Suspense, type ReactNode } from 'react'
 import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import { NotFound } from '~/components/NotFound'
 import appCss from '~/styles/app.css?url'
@@ -55,6 +54,18 @@ function RootComponent() {
   )
 }
 
+const TanStackRouterDevtools =
+  process.env.CF_PAGES_BRANCH === 'main'
+    ? () => null
+    : lazy(() =>
+        // Lazy load in development
+        import('@tanstack/router-devtools').then((res) => ({
+          default: res.TanStackRouterDevtools,
+          // For Embedded Mode
+          // default: res.TanStackRouterDevtoolsPanel
+        })),
+      )
+
 function RootDocument({ children }: { children: ReactNode }) {
   return (
     <Html lang="en" translate="no">
@@ -64,7 +75,9 @@ function RootDocument({ children }: { children: ReactNode }) {
       <Body>
         {children}
         <ScrollRestoration />
-        <TanStackRouterDevtools position="bottom-right" />
+        <Suspense>
+          <TanStackRouterDevtools position="bottom-right" />
+        </Suspense>
         <Scripts />
       </Body>
     </Html>
