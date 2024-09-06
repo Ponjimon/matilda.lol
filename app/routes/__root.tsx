@@ -54,6 +54,8 @@ function RootComponent() {
   )
 }
 
+console.log(process.env)
+
 const TanStackRouterDevtools =
   process.env.CF_PAGES_BRANCH === 'main'
     ? () => null
