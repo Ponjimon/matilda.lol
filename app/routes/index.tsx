@@ -1,9 +1,14 @@
-import { useRef, useState, useEffect } from 'react'
-import Gif from './assets/4.gif'
-import Egg from './assets/egg.png'
-import Music from './assets/music.ogg'
+import { createFileRoute } from '@tanstack/react-router'
+import { useEffect, useRef, useState } from 'react'
+import Gif from '~/assets/4.gif'
+import Egg from '~/assets/egg.png'
+import Music from '~/assets/music.ogg'
 
-function App() {
+export const Route = createFileRoute('/')({
+  component: Home,
+})
+
+function Home() {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [scale, setScale] = useState(1)
@@ -95,5 +100,3 @@ function App() {
     </div>
   )
 }
-
-export default App

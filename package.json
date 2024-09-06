@@ -4,29 +4,38 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
     "lint": "biome check .",
     "preview": "bun run build && wrangler pages dev ./dist",
     "deploy": "bun run build && wrangler pages deploy ./dist"
   },
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@tanstack/react-router": "^1.56.1",
+    "@tanstack/router-devtools": "^1.56.1",
+    "@tanstack/start": "^1.56.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.8.3",
     "@cloudflare/workers-types": "^4.20240903.0",
+    "@tanstack/router-plugin": "^1.56.1",
     "@types/bun": "^1.1.8",
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.45",
     "tailwindcss": "^3.4.10",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0",
+    "typescript": "^5.5.4",
+    "vinxi": "^0.4.2",
+    "vite": "^5.4.3",
+    "vite-tsconfig-paths": "^5.0.1",
     "wrangler": "^3.74.0"
   },
-  "trustedDependencies": ["@biomejs/biome"]
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
 }
