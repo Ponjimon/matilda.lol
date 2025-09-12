@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "my-start-app",
+  "name": "matilda-lol",
   "main": ".output/server/index.mjs",
   "compatibility_date": "2025-09-12",
   "compatibility_flags": ["nodejs_compat"],
@@ -8,12 +8,9 @@
     "directory": ".output/public"
   },
   "observability": {
-    "enabled": true
+    "enabled": false
   },
-  "kv_namespaces": [
-    {
-      "binding": "CACHE",
-      "id": "<Your KV ID>"
-    }
-  ]
+  "dev": {
+    "ip": "0.0.0.0"
+  }
 }
