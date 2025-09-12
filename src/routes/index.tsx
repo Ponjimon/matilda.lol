@@ -68,7 +68,7 @@ function Home() {
             setIsPlaying(true)
           }}
           aria-label="Play"
-          className="relative size-48 sm:size-96 bg-contain bg-no-repeat hover:animate-jiggle disabled:animate-none focus-visible:animate-jiggle outline-none group [image-rendering:pixelated]"
+          className="relative cursor-pointer size-48 sm:size-96 bg-contain bg-no-repeat hover:animate-jiggle disabled:animate-none focus-visible:animate-jiggle outline-none group [image-rendering:pixelated]"
           style={{
             backgroundImage: `url(${Egg})`,
             transform: isPlaying ? `scale(${scale}) rotate(${rotation}deg)` : undefined,
@@ -88,7 +88,7 @@ function Home() {
           )}
         </button>
         {!isPlaying && (
-          <p className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap bottom-[-2rem] text-white text-center select-none opacity-0 animate-[fadeIn_1s_ease-in_5s_forwards] group-hover:animate-none group-hover:opacity-0">
+          <p className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap -bottom-8 text-white text-center select-none opacity-0 animate-[fadeIn_1s_ease-in_5s_forwards] group-hover:animate-none group-hover:opacity-0">
             Click Eggtilda
           </p>
         )}
