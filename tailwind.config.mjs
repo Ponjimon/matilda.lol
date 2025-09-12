@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./app/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  extend: {
       animation: {
         jiggle: 'jiggle 0.5s ease-in-out',
         float: 'float 20s linear infinite',
@@ -42,6 +41,4 @@ export default {
         },
       },
     },
-  },
-  plugins: [],
 }
