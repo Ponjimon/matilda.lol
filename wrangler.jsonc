@@ -12,5 +12,11 @@
   },
   "dev": {
     "ip": "0.0.0.0"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "matilda.lol",
+      "custom_domain": true
+    }
+  ]
 }
